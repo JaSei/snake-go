@@ -27,8 +27,9 @@ func (s Snake) Head() Coordinates {
 	return s.Body[len(s.Body)-1]
 }
 
-func (s *Snake) Turn(d Direction) {
+func (s *Snake) Turn(d Direction) Snake {
 	s.direction = d
+	return *s
 }
 
 func (s Snake) Step() Coordinates {
@@ -60,4 +61,21 @@ func (s Snake) Draw(f func(Coordinates)) {
 	for _, c := range s.Body {
 		f(c)
 	}
+}
+
+func (s Snake) Containes(c Coordinates) bool {
+	for _, bodyCoord := range s.Body {
+		if bodyCoord.Equal(c) {
+			return true
+		}
+	}
+
+	return false
+}
+
+func (a Coordinates) Equal(b Coordinates) bool {
+	if a.x == b.x && a.y == b.y {
+		return true
+	}
+	return false
 }
