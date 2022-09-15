@@ -61,8 +61,8 @@ func main() {
 	//mid.SetAlignment(views.VAlignCenter | views.HAlignCenter)
 	//bot.SetAlignment(views.VAlignBottom | views.HAlignLeft)
 
-	v := views.
-		root.SetOrientation(views.Horizontal)
+	//v := views.
+	root.SetOrientation(views.Horizontal)
 	root.AddWidget(arena, 0)
 	root.AddWidget(info, 0)
 	info.AddWidget(title, 0)
